@@ -10,17 +10,17 @@ Output Transforms consist of numerous CSC transforms to the respective Gamma out
 
 ## Installation
 
-The ACES DCTL files in the IDT folder must be copied to the appropriate IDT directory based on the host Operating System:
+The ACES DCTL files in the IDT folder must be copied to the appropriate IDT or ODT sub-directory based on the host Operating System:
 
 
 #### Windows
-%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\ACES Transforms\IDT\
+%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\ACES Transforms\
 
 #### Mac
-~/Library/Application Support/Blackmagic Design/DaVinci Resolve/ACES Transforms/IDT/
+~/Library/Application Support/Blackmagic Design/DaVinci Resolve/ACES Transforms/
 
 #### Linux
-~/.local/share/DaVinciResolve/ACES Transforms/IDT/
+~/.local/share/DaVinciResolve/ACES Transforms/
 
 
 ## Usage
