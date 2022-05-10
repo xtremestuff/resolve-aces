@@ -1,0 +1,26 @@
+//sRGB ACES IDT
+#if (__RESOLVE_VER_MAJOR__ >= 17)
+DEFINE_ACES_PARAM(IS_PARAMETRIC_ACES_TRANSFORM: 0)
+#endif
+
+//sRGB to ACES using CAT02
+__CONSTANT__ float srgbM[3][3] = {{0.4395756842f, 0.3839125893f, 0.1765117265f},{ 0.0896003829f, 0.8147141542f, 0.0956854629f},{ 0.0174154827f, 0.1087343522f, 0.8738501650f}};
+
+
+__DEVICE__ float srgb_to_lin(float x) {
+	if(x <= 0.04045f) return (x / 12.92f);
+	else return _powf((x + 0.055f)/1.055f, 2.4f);
+}
+
+__DEVICE__ float3 transform(int p_Width, int p_Height, int p_X, int p_Y, float p_R, float p_G, float p_B) {
+
+	float r = srgb_to_lin(p_R);
+	float g = srgb_to_lin(p_G);
+	float b = srgb_to_lin(p_B);
+
+	float rVal = srgbM[0][0] * r + srgbM[0][1] * g + srgbM[0][2] * b;
+	float gVal = srgbM[1][0] * r + srgbM[1][1] * g + srgbM[1][2] * b;
+	float bVal = srgbM[2][0] * r + srgbM[2][1] * g + srgbM[2][2] * b;
+
+	return make_float3( rVal, gVal, bVal);
+}

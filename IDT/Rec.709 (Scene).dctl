@@ -1,0 +1,26 @@
+//Rec.709 Scene ACES IDT
+#if (__RESOLVE_VER_MAJOR__ >= 17)
+DEFINE_ACES_PARAM(IS_PARAMETRIC_ACES_TRANSFORM: 0)
+#endif
+
+//Rec709 to ACES using CAT02
+__CONSTANT__ float rec709[3][3] = {{0.4395756842f, 0.3839125893f, 0.1765117265f},{ 0.0896003829f, 0.8147141542f, 0.0956854629f},{ 0.0174154827f, 0.1087343522f, 0.8738501650f}};
+
+
+__DEVICE__ float rec_to_lin(float x) {
+	if(x < 0.081f) return (x / 4.5f);
+	else return _powf((x + 0.099f)/1.099f,(1.0f/0.45f));
+}
+
+__DEVICE__ float3 transform(int p_Width, int p_Height, int p_X, int p_Y, float p_R, float p_G, float p_B) {
+
+	float r = rec_to_lin(p_R);
+	float g = rec_to_lin(p_G);
+	float b = rec_to_lin(p_B);
+
+	float rVal = rec709[0][0] * r + rec709[0][1] * g + rec709[0][2] * b;
+	float gVal = rec709[1][0] * r + rec709[1][1] * g + rec709[1][2] * b;
+	float bVal = rec709[2][0] * r + rec709[2][1] * g + rec709[2][2] * b;
+
+	return make_float3( rVal, gVal, bVal);
+}
