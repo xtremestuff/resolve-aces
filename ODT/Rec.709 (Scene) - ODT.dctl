@@ -20,7 +20,7 @@ __DEVICE__ float rec_to_lin(float x)
 
 __DEVICE__ float lin_to_rec(float x)
 {
-	if(x < .0018f) return 4.5f * x;
+	if(x < .0018f) return _fmaxf(4.5f * x, 0.0f);
 	else return 1.099f * _powf(x,0.45f) - 0.099f;
 }
 
