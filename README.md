@@ -10,7 +10,7 @@ Output Transforms consist of numerous CSC transforms to the respective Gamma out
 
 ## Installation
 
-The ACES DCTL files in the IDT folder must be copied to the appropriate IDT or ODT sub-directory based on the host Operating System:
+The ACES DCTL files in the IDT & ODT folder must be copied to the appropriate IDT or ODT sub-directory based on the host Operating System:
 
 
 #### Windows
@@ -54,7 +54,7 @@ IDT based on the ITU-R BT.709 Color Primaries and Power Law 2.2 Function
 IDT based on the ITU-R BT.709 Color Primaries and Power Law 2.4 Function
 
 #### Rec.2020 Gamma 2.4.dctl
-IDT based on the ITU-R BT.2020 Color Primaries and Power Law 2.4  Function
+IDT based on the ITU-R BT.2020 Color Primaries and Power Law 2.4 Function
 
 #### sRGB IEC 61966-2-1.dctl
 IDT based on sRGB Specification
