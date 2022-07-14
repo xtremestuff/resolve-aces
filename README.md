@@ -37,6 +37,10 @@ As of Resolve 17.2 and above, the IDT files can be selected as ACES Input Transf
 When exporting media using custom ODTs, ensure the correct Color Space Tag & Gamma Tag are manually matched to the respective ODT in the "Advanced Settings" panel on the Delivery page.
 
 
+### Usage Tutorial
+
+How to use Custom IDTs and ODTs:
+https://youtu.be/I6dpYL4knms
 
 
 ## ACES IDTs
