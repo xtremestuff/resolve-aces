@@ -41,6 +41,13 @@ When exporting media using custom ODTs, ensure the correct Color Space Tag & Gam
 
 The custom IDT & ODT can also be used through the ACES Transform OFX plugin
 
+### Usage Tutorial
+
+How to use Custom IDTs and ODTs:
+
+[![Custom ACES IDT & ODT](https://img.youtube.com/vi/I6dpYL4knms/0.jpg)](https://www.youtube.com/watch?v=I6dpYL4knms "Custom ACES IDT & ODT")
+
+
 
 ## ACES IDTs
 
