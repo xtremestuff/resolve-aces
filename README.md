@@ -2,9 +2,9 @@
 
 The following are a series of ACES Input Device Transforms (IDTs) and Output Device Transforms (ODTs) for DaVinci Resolve.
 
-The Input Transforms consist of Color Space Conversion (CSC) / Scene Referred and Inverse ODT DCTLs covering various Rec.709 & Rec.2020 Gamma settings including Gamma 2.2, Gamma 2.4 as well as the ITU-R BT.709 transfer function.
+The Input Transforms consist of Color Space Conversion (CSC) / Scene Referred and Inverse ODT DCTLs covering various color space and transfer function settings including Gamma 2.2, Gamma 2.4 & ITU-R BT.709.
 
-Output Transforms consist of numerous CSC transforms to the respective Gamma outputs as well as ODTs that perform Tone Mapping with the correct Middle Gray values retained across the respective Gamma curves.
+Output Transforms consist of numerous CSC transforms to the respective Gamma outputs as well as ODTs that perform Tone Mapping with the correct Middle Gray values retained across the respective curves.
 
 
 
@@ -37,6 +37,9 @@ As of Resolve 17.2 and above, the IDT files can be selected as ACES Input Transf
 When exporting media using custom ODTs, ensure the correct Color Space Tag & Gamma Tag are manually matched to the respective ODT in the "Advanced Settings" panel on the Delivery page.
 
 
+### ACES Transform
+
+The custom IDT & ODT can also be used through the ACES Transform OFX plugin
 
 
 ## ACES IDTs
@@ -68,6 +71,12 @@ Inverse ODT of the Rec.709 Gamma 2.2 Tone Mapped Output Transform
 #### Rec.709 Gamma 2.4 - InvODT.dctl
 Inverse ODT of the Rec.709 Gamma 2.4 Tone Mapped Output Transform
 
+#### P3-D65 Gamma 2.2 - InvODT.dctl
+Inverse ODT of the P3-D65 Gamma 2.2 Tone Mapped Output Transform
+
+#### P3-D65 Gamma 2.4 - InvODT.dctl
+Inverse ODT of the P3-D65 Gamma 2.4 Tone Mapped Output Transform
+
 
 ## ACES ODTs
 
@@ -91,3 +100,9 @@ ODT based on Rec.709 Gamma 2.2 with RRT
 
 #### Rec.709 Gamma 2.4 - ODT.dctl
 ODT based on Rec.709 Gamma 2.4 with RRT
+
+#### P3-D65 Gamma 2.2 - ODT.dctl
+ODT based on P3-D65 Gamma 2.2 with RRT
+
+#### P3-D65 Gamma 2.4 - ODT.dctl
+ODT based on P3-D65 Gamma 2.4 with RRT
