@@ -54,17 +54,11 @@ How to use Custom IDTs and ODTs:
 #### Rec.709 (Scene).dctl
 IDT based on the ITU-R BT.709 Color Primaries and ITU-R BT.709 Transfer Function
 
-#### Rec.2020 (Scene).dctl
-IDT based on the ITU-R BT.2020 Color Primaries and ITU-R BT.2020 Transfer Function
-
 #### Rec.709 Gamma 2.2.dctl
 IDT based on the ITU-R BT.709 Color Primaries and Power Law 2.2 Function
 
 #### Rec.709 Gamma 2.4.dctl
 IDT based on the ITU-R BT.709 Color Primaries and Power Law 2.4 Function
-
-#### Rec.2020 Gamma 2.4.dctl
-IDT based on the ITU-R BT.2020 Color Primaries and Power Law 2.4 Function
 
 #### sRGB IEC 61966-2-1.dctl
 IDT based on sRGB Specification
@@ -83,6 +77,21 @@ Inverse ODT of the P3-D65 Gamma 2.2 Tone Mapped Output Transform
 
 #### P3-D65 Gamma 2.4 - InvODT.dctl
 Inverse ODT of the P3-D65 Gamma 2.4 Tone Mapped Output Transform
+
+#### Rec.2020 (Scene).dctl
+IDT based on the ITU-R BT.2020 Color Primaries and ITU-R BT.2020 Transfer Function
+
+#### Rec.2020 Gamma 2.2.dctl
+IDT based on the ITU-R BT.2020 Color Primaries and Power Law 2.2 Function
+
+#### Rec.2020 Gamma 2.4.dctl
+IDT based on the ITU-R BT.2020 Color Primaries and Power Law 2.4 Function
+
+#### Rec.2020 Gamma 2.2 - InvODT.dctl
+Inverse ODT of the Rec.2020 Gamma 2.2 Tone Mapped Output Transform
+
+#### Rec.2020 Gamma 2.4 - InvODT.dctl
+Inverse ODT of the Rec.2020 Gamma 2.4 Tone Mapped Output Transform
 
 
 ## ACES ODTs
@@ -113,3 +122,15 @@ ODT based on P3-D65 Gamma 2.2 with RRT
 
 #### P3-D65 Gamma 2.4 - ODT.dctl
 ODT based on P3-D65 Gamma 2.4 with RRT
+
+#### Rec.2020 Gamma 2.2 - CSC.dctl
+ODT based on the ITU-R BT.2020 Color Primaries and Power Law 2.2 Function without RRT
+
+#### Rec.2020 Gamma 2.4 - CSC.dctl
+ODT based on the ITU-R BT.2020 Color Primaries and Power Law 2.4 Function without RRT
+
+#### Rec.2020 Gamma 2.2 - ODT.dctl
+ODT based on Rec.2020 Gamma 2.2 with RRT
+
+#### Rec.2020 Gamma 2.4 - ODT.dctl
+ODT based on Rec.2020 Gamma 2.4 with RRT

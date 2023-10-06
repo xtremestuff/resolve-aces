@@ -1,0 +1,53 @@
+//Rec.2020 Gamma 2.4 ACES ODT
+DEFINE_ACES_PARAM(Y_MIN: 0.02,
+                  Y_MID: 8.6564,
+                  Y_MAX: 48.0,
+                  DISPLAY_PRI: { 0.708, 0.292, 0.292, 0.797, 0.131, 0.131, 0.31270, 0.32900 },
+                  LIMITING_PRI: { 0.708, 0.292, 0.292, 0.797, 0.131, 0.131, 0.31270, 0.32900 },
+                  EOTF: fwd_gamma,
+                  INVERSE_EOTF: rev_gamma,
+                  SURROUND: 0,
+                  STRETCH_BLACK: 1,
+                  D60_SIM: 0,
+                  LEGAL_RANGE: 0)
+
+
+__DEVICE__ float lin_to_gamma(float x) {
+	return _fmaxf(_powf(x, 1.0f / 2.4f), 0.0f);
+}
+
+__DEVICE__ float gamma_to_lin(float x) {
+	return _fmaxf(_powf(x, 2.4f), 0.0f);
+}
+
+
+__DEVICE__ float3 fwd_gamma(float3 p_InputCV, __CONSTANTREF__ AcesTransformUserSettingParams* p_AcesParams)
+{
+	float3 outputCV;
+	
+	outputCV.x = lin_to_gamma(p_InputCV.x);
+	outputCV.y = lin_to_gamma(p_InputCV.y);
+	outputCV.z = lin_to_gamma(p_InputCV.z);
+
+	return outputCV;
+}
+
+__DEVICE__ float3 rev_gamma(float3 p_InputCV, __CONSTANTREF__ AcesTransformUserSettingParams* p_AcesParams)
+{
+	float3 outputCV;
+
+
+	outputCV.x = gamma_to_lin(p_InputCV.x);
+	outputCV.y = gamma_to_lin(p_InputCV.y);
+	outputCV.z = gamma_to_lin(p_InputCV.z);
+	
+	return outputCV;
+}
+
+
+__DEVICE__ float3 transform(int p_Width, int p_Height, int p_X, int p_Y, float p_R, float p_G, float p_B) {
+
+	const float3 result = AcesInvOutputTransform(p_R, p_G, p_B);
+	
+	return result;
+}

@@ -1,0 +1,26 @@
+//Rec.2020 Gamma 2.4 ACES ODT
+#if (__RESOLVE_VER_MAJOR__ >= 17)
+DEFINE_ACES_PARAM(IS_PARAMETRIC_ACES_TRANSFORM: 0)
+#endif
+
+
+//ACES to Rec.2020 using CAT02
+__CONSTANT__ float r2020M[3][3] =  {{ 1.49086870f, -0.26871298f, -0.22215573f}, {-0.07923721f,  1.17936858f, -0.10013137f}, { 0.00277810f, -0.03043361f,  1.02765551f}};
+
+
+__DEVICE__ float lin_to_gamma(float x) {
+	return _fmaxf(_powf(x, 1.0f / 2.4f), 0.0f);
+}
+
+__DEVICE__ float3 transform(int p_Width, int p_Height, int p_X, int p_Y, float p_R, float p_G, float p_B) {
+
+	float rVal = r2020M[0][0] * p_R + r2020M[0][1] * p_G + r2020M[0][2] * p_B;
+	float gVal = r2020M[1][0] * p_R + r2020M[1][1] * p_G + r2020M[1][2] * p_B;
+	float bVal = r2020M[2][0] * p_R + r2020M[2][1] * p_G + r2020M[2][2] * p_B;
+	
+	rVal = lin_to_gamma(rVal);
+	gVal = lin_to_gamma(gVal);
+	bVal = lin_to_gamma(bVal);
+
+	return make_float3( rVal, gVal, bVal);
+}
