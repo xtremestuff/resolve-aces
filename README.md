@@ -25,8 +25,10 @@ The ACES DCTL files in the IDT & ODT folder must be copied to the appropriate ID
 #### iPad (Resolve 18.6.2 and above)
 ACES Transforms folder within DaVinci Resolve App folder structure
 
-Input Transforms: ACES Transforms/IDT/
-Onput Transforms: ACES Transforms/ODT/
+| Transform Type | Folder |
+|-------------------|---------------------|
+| Input Transforms  | ACES Transforms/IDT/ |
+| Output Transforms | ACES Transforms/ODT/ |
 
 If the folders do not exist, they may need to be created manually.
 
