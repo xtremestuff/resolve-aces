@@ -6,7 +6,7 @@ if [ $(uname -s) = "Linux" ]; then
 	IDT_FOLDER="${HOME}/.local/share/DaVinciResolve/ACES Transforms/IDT"
 	ODT_FOLDER="${HOME}/.local/share/DaVinciResolve/ACES Transforms/ODT"
         
-elif [ $(uname -s) = "darwin" ]; then
+elif [ $(uname -s) = "Darwin" ]; then
 	IDT_FOLDER="${HOME}/Library/Application Support/Blackmagic Design/DaVinci Resolve/ACES Transforms/IDT"
 	ODT_FOLDER="${HOME}/Library/Application Support/Blackmagic Design/DaVinci Resolve/ACES Transforms/ODT"
 fi
