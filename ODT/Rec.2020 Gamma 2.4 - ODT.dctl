@@ -1,4 +1,5 @@
 //Rec.2020 Gamma 2.4 ACES ODT
+#if (((__RESOLVE_VER_MAJOR__ == 18) && (__RESOLVE_VER_MINOR__ >= 6)) || (__RESOLVE_VER_MAJOR__ >= 19))
 DEFINE_ACES_PARAM(Y_MIN: 0.02,
                   Y_MID: 8.6564,
                   Y_MAX: 48.0,
@@ -9,7 +10,21 @@ DEFINE_ACES_PARAM(Y_MIN: 0.02,
                   SURROUND: 0,
                   STRETCH_BLACK: 1,
                   D60_SIM: 0,
-                  LEGAL_RANGE: 0)
+				  LEGAL_RANGE: 0,
+				  OUTPUT_COLORSPACE_TAG: Rec2020_100nits_dim)
+#else
+				  DEFINE_ACES_PARAM(Y_MIN: 0.02,
+                  Y_MID: 8.6564,
+                  Y_MAX: 48.0,
+                  DISPLAY_PRI: { 0.708, 0.292, 0.292, 0.797, 0.131, 0.131, 0.31270, 0.32900 },
+                  LIMITING_PRI: { 0.708, 0.292, 0.292, 0.797, 0.131, 0.131, 0.31270, 0.32900 },
+                  EOTF: fwd_gamma,
+                  INVERSE_EOTF: rev_gamma,
+                  SURROUND: 0,
+                  STRETCH_BLACK: 1,
+                  D60_SIM: 0,
+				  LEGAL_RANGE: 0)
+#endif
 
 
 __DEVICE__ float lin_to_gamma(float x) {
